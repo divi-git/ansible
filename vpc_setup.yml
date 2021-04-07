@@ -122,13 +122,13 @@
       register: routePub_out
 
     - name: create NAT gateway
-        ec2_vpc_nat_gateway:
-          state: "{{state}}"
-          subnet_id: "{{pubsub1_out.subnet.id}}"
-          wait: yes
-          region: "{{region}}"
-          if_exist_do_not_create: true
-        register: NatGW_out
+      ec2_vpc_nat_gateway:
+        state: "{{state}}"
+        subnet_id: "{{pubsub1_out.subnet.id}}"
+        wait: yes
+        region: "{{region}}"
+        if_exist_do_not_create: true
+      register: NatGW_out
 
     - name: setting route table for private subnet
       ec2_vpc_route_table:
