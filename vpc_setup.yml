@@ -15,3 +15,10 @@
         tenancy: default
         state: "{{state}}"
       register: vpcout
+
+    - debug:
+       var: vpcout
+
+    #- name: create public subnet in zone 1
+     # ec2_vpc_subnet:
+
