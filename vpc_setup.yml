@@ -82,7 +82,7 @@
         resource_tags:
           Name: vprofile-PrivSub2
       register: PrivSub2_out
-
+\
 
 
     - name: create private subnet in zone 3
@@ -160,3 +160,25 @@
         - NatGW_out.nat_gateway_id
         - routePub_out_table.id
         - routePriv_out_table.id
+
+    - set_fact:
+         vpcoutid: "{{vpcout.vpc.id}}"
+         pubsub1id: "{{pubsub1_out.subnet.id}}"
+         pubsub2id: "{{pubsub2_out.subnet.id}}"
+         pubsub3id: "{{pubsub3_out.subnet.id}}"
+         PrivSub1id: "{{PrivSub1_out.subnet.id}}"
+         PrivSub2id: "{{PrivSub2_out.subnet.id}}"
+         PrivSub3id: "{{PrivSub3_out.subnet.id}}"
+         IGW_outid: "{{IGW_out.gateway_id}}"
+         NatGW_outid: "{{NatGW_out.nat_gateway_id}}"
+         routePubid: "{{routePub_out_table.id}}"
+         routePrivid: "{{routePriv_out_table.id}}"
+         cacheable: yes
+
+    - name:
+      copy:
+        content: "vpcoutid: {{vpcout.vpc.id}}\npubsub1id: {{pubsub1_out.subnet.id}}\npubsub2id: {{pubsub2_out.subnet.id}}\npubsub3id: {{pubsub3_out.subnet.id}}\nPrivSub1id: {{PrivSub1_out.subnet.id}}\nPrivSub2id: {{PrivSub2_out.subnet.id}\n PrivSub3id: {{PrivSub3_out.subnet.id}}\nIGW_outid: {{IGW_out.gateway_id}}\nNatGW_outid: {{NatGW_out.nat_gateway_id}}\nroutePubid: {{routePub_out_table.id}}\nroutePrivid: {{routePriv_out_table.id}}"
+        dest: vars/output_vars
+
+
+
