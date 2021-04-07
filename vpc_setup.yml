@@ -170,8 +170,8 @@
          PrivSub3id: "{{PrivSub3_out.subnet.id}}"
          IGW_outid: "{{IGW_out.gateway_id}}"
          NatGW_outid: "{{NatGW_out.nat_gateway_id}}"
-         routePubid: "{{routePub_out_table.id}}"
-         routePrivid: "{{routePriv_out_table.id}}"
+         routePubid: "{{routePub_out.route_table.id}}"
+         routePrivid: "{{routePriv_out.route_table.id}}"
          cacheable: yes
 
     - name:
