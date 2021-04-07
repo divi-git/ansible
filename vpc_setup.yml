@@ -94,5 +94,5 @@
         cidr: "{{PrivSub3Cidr}}"
         map_public: yes
         resource_tags:
-        Name: vprofile-PrivSub3
-        register: PrivSub3_out
+          Name: vprofile-PrivSub3
+      register: PrivSub3_out
