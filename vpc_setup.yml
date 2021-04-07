@@ -82,7 +82,6 @@
         resource_tags:
           Name: vprofile-PrivSub2
       register: PrivSub2_out
-\
 
 
     - name: create private subnet in zone 3
