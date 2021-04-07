@@ -23,7 +23,7 @@
       when: keyout.changed
 
     - name: create security group for bastion
-      ec2_group
+      ec2_group:
         Name: bastionhost-SG
         description: all0w port 22 from everywhere
         region: "{{region}}"
