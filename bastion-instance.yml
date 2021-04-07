@@ -19,7 +19,7 @@
     - name: store the key
       copy:
         content: "{{keyout.key.private_key}}"
-        dest: "./my_keypair.pem"
+        dest: "./my_keypairss.pem"
         mode:  0600
         when: keyout.changed
 
