@@ -5,7 +5,7 @@
   gather_facts: no
   tasks:
     - name: import variables
-      include_vars: vars\bastion_setup
+      include_vars: vars/bastion_setup
 
     - name: create a new ec2 key pair, returns generated private key
       ec2_key:
