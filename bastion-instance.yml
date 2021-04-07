@@ -14,13 +14,13 @@
         register: keyout
 
     - debug:
-      var: keyout
+        var: keyout
 
     - name: store the key
       copy:
       content: "{{keyout.key.private_key}}"
-      dest: ./sample-key.pem
-      when: keyout.changed
+        dest: ./sample-key.pem
+        when: keyout.changed
 
     - name: create security group for bastion
       ec2_group:
