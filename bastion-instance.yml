@@ -18,7 +18,7 @@
 
     - name: store the key
       copy:
-       content: "{{keyout.key.private_key}}"
+        content: "{{keyout.key.private_key}}"
         dest: ./sample-key.pem
         when: keyout.changed
 
