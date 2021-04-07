@@ -129,3 +129,18 @@
         region: "{{region}}"
         if_exist_do_not_create: true
       register: NatGW_out
+
+    - name: setting route table for public subnet
+      ec2_vpc_route_table:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{region}}"
+        tags:
+        Name: public-Route
+        subnets:
+          - "{{PrivSub1_out.subnet.id}}"
+          - "{{PrivSub2_out.subnet.id}}"
+          - "{{PrivSub3_out.subnet.id}}"
+        routes:
+          - dest: 0.0.0.0/0
+            gateway_id: "{{NatGW_out.nat_gateway_id}}"
+      register: routePriv_out
