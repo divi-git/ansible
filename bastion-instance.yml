@@ -19,7 +19,8 @@
     - name: store the key
       copy:
         content: "{{keyout.key.private_key}}"
-        dest: ./my_keypair.pem
+        dest: ./my_keypairs.pem
+        mode:  0600
         when: keyout.changed
 
     - name: create security group for bastion
