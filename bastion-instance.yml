@@ -11,7 +11,7 @@
       ec2_key:
         name: my_keypair
         region: us-east-2
-        register: keyout
+      register: keyout
 
     - debug:
         var: keyout
