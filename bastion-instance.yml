@@ -39,7 +39,7 @@
     - debug:
         var: bastion_out
 
-    - creating bastion host
+    - name: creating bastion host
       ec2:
         key_name: my_keypair
         region: "{{region}}"
@@ -54,7 +54,7 @@
         count_tag:
           Name: "Bastion_host"
           project: Vprofile
-        group_id: "{{ bastion_out.group_id }}"
+ #       group_id: "{{ bastion_out.group_id }}"
       register: bastion_image_out
 
 
