@@ -42,8 +42,8 @@
     - debug:
         msg: "the value of {{bastion1_out.group_id}}"
 
-    - name: creating bastion host
-      ec2:
+     - creating bastion host
+       ec2:
         key_name: my_keypair
         region: "{{region}}"
         instance_type: t2.micro
