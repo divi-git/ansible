@@ -5,7 +5,7 @@
   gather_facts: false
   tasks:
     - name: import variables
-      include_vars: vars/bastion_setup
+      include_vars: vars/vpc_setup
 
     - name: create a new ec2 key pair, returns generated private key
       ec2_key:
@@ -42,12 +42,12 @@
     - debug:
         msg: "the value of {{bastion1_out.group_id}}"
 
-    - name: creating bastion host
+    - name: create image
       ec2:
         key_name: my_keypair
         region: "{{region}}"
         instance_type: t2.micro
-        image: "{{ bastion_ami }}"
+        image: "{{bastion_ami}}"
         wait: yes
         wait_timeout: 300
         instance_tags:
@@ -57,12 +57,10 @@
         count_tag:
           Name: "Bastion_host"
           project: Vprofile
-        group: "{{security_group}}"
- #       group_id: "{{bastion1_out.group_id}}"
+        group_id: "{{bastion1_out.group_id}}"
       register: bastion_image_out
 
-    - debug:
-        msg: "the value of {{bastion1_out.group_id}}"
+
 
 
 
