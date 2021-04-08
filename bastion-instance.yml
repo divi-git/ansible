@@ -14,8 +14,8 @@
       register: keyout
 
 
-    - debug:
-        var: keyout
+  #  - debug:
+  #      var: keyout
 
     - name: store the key
       copy:
@@ -35,6 +35,9 @@
             to_port: 22
             cidr_ip: "{{MYIP}}"
       register: bastion_out
+
+    - debug:
+        var: bastion_out
 
     - name: creating bastion host
       ec2:
