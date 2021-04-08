@@ -31,9 +31,9 @@
         vpc_id: "{{vpcoutid}}"
         rules:
           - proto: tcp
-          - from_port: 22
-          - to_port: 22
-          - cidr_ip: "{{MYIP}}"
+            from_port: 22
+            to_port: 22
+            cidr_ip: "{{MYIP}}"
       register: bastion_out
 
     - name: creating bastion host

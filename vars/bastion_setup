@@ -13,3 +13,5 @@ IGW_outid: igw-0e1fb9f08afe6a4d3
 NatGW_outid: nat-01541f3c51d150393
 routePubid: rtb-0ea682e6ee3ff1990
 routePrivid: rtb-01bdf1bdd3a725090
+
+region: us-east-2
