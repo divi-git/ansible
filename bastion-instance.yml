@@ -37,7 +37,7 @@
       register: bastion1_out
 
     - debug:
-        var: bastion_out
+        var: bastion1_out
 
     - name: creating bastion host
       ec2:
