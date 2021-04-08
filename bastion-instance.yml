@@ -58,6 +58,7 @@
           Name: "Bastion_host"
           project: Vprofile
         group_id: "{{bastion1_out.group_id}}"
+          name: bastionhost-SG
       register: bastion_image_out
 
     - debug:
