@@ -35,12 +35,12 @@
             to_port: 22
             cidr_ip: "{{MYIP}}"
       register: bastion1_out
-
+      value: {{bastion1_out.group_id}}
     - debug:
         var: bastion1_out
 
     - debug:
-        msg: "the value of {{bastion1_out.group_id}}"
+        msg: "the value of {{value}}"
 
      - creating bastion host
        ec2:
