@@ -39,7 +39,7 @@
     - debug:
         var: bastion_out
 
-    - name: creating bastion host
+    - creating bastion host
       ec2:
         key_name: my_keypair
         region: "{{region}}"
