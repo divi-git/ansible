@@ -55,10 +55,10 @@
           project: Vprofile
         exact_count: 1
         count_tag:
+        group: "{{security_group}}"
           Name: "Bastion_host"
           project: Vprofile
-        group_name: bastionhost-SG
-        group_id: "{{bastion1_out.group_id}}"
+ #       group_id: "{{bastion1_out.group_id}}"
       register: bastion_image_out
 
     - debug:

@@ -15,3 +15,5 @@ routePubid: rtb-0ea682e6ee3ff1990
 routePrivid: rtb-01bdf1bdd3a725090
 
 region: us-east-2
+
+security_group: bastionhost-SG
