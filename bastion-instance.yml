@@ -54,7 +54,7 @@
         count_tag:
           Name: "Bastion_host"
           project: Vprofile
-        group_name: "{{bastion_out.group_name}}"
+        id: "{{bastion_out.group_id}}"
       register: bastion_image_out
 
 
