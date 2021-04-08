@@ -57,5 +57,8 @@
         group: "{{bastion_out.group_name}}"
       register: bastion_image_out
 
+    - debug:
+        var: bastion_image_out
+
 
 
