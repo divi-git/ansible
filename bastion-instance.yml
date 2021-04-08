@@ -34,7 +34,7 @@
             from_port: 22
             to_port: 22
             cidr_ip: "{{MYIP}}"
-      register: bastion_out
+      register: bastion1_out
 
     - debug:
         var: bastion_out
@@ -54,7 +54,7 @@
         count_tag:
           Name: "Bastion_host"
           project: Vprofile
-        group: "{{bastion_out.group_name}}"
+        group_id: "{{bastion1_out.group_id}}"
       register: bastion_image_out
 
     - debug:
