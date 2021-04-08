@@ -41,6 +41,8 @@
 
     - debug:
         msg: "the value of {{bastion1_out.group_id}}"
+      var:
+        value: "{{bastion1_out.group_id}}"
 
     - name: create image
       ec2:
@@ -57,7 +59,7 @@
         count_tag:
           Name: "Bastion_host"
           project: Vprofile
-        group_id: "{{bastion1_out.group_id}}"
+        group_id: "{{value}}"
       register: bastion_image_out
 
 
