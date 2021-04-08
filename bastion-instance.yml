@@ -39,6 +39,9 @@
     - debug:
         var: bastion1_out
 
+    - debug:
+        msg: "the value of {{bastion1_out.group_id}}"
+
     - name: creating bastion host
       ec2:
         key_name: my_keypair
@@ -58,7 +61,7 @@
       register: bastion_image_out
 
     - debug:
-        var: bastion_image_out
+        msg: "the value of {{bastion1_out.group_id}}"
 
 
 
